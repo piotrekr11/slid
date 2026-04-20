@@ -1,0 +1,26 @@
+Summary file for          : CBKA0910.26o
+Created (local time)      : 2026-04-20 18:05:25
+
+Order ID                  : 44307
+Order number              : 2
+Order item ID             : 120326
+
+Input parameters          : 
+Start time (GPS)          : 2026-04-01 12:00:00
+End time (GPS)            : 2026-04-02 12:00:00
+Interval [sec]            : 60
+VRS request               : No
+Station                   : CBKA
+
+Result                    : 
+Generation status         : Successful
+Effective minutes         : 1440
+Available epochs          : 1440
+File size [Bytes]         : 37199120
+File type                 : RINEX 3.04
+
+Data analysis             : 
+Block 0 start             : 2026-04-01 12:00:00
+Block 0 end               : 2026-04-02 12:00:00
+Block 0 good Epochs       : 1440
+Block 0 missing Epochs    : 0
