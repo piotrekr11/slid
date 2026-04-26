@@ -1,7 +1,6 @@
 function [xyz_rec, lla_rec, R_enu] = getReceiverPos()
 
-xyz_rec = [3675710.0, 1383730.0, 5022806.0];  % [m]
-lla_rec = ecef2lla(xyz_rec, 'WGS84');         % [deg, deg, m]
+[xyz_rec, lla_rec, R_enu] = getReceiverPosModel("wgs84");
 
 lat = deg2rad(lla_rec(1));
 lon = deg2rad(lla_rec(2));
