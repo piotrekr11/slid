@@ -1,10 +1,10 @@
-function [xyz_rec, lla_rec, R_enu] = getReceiverPosModel(modelName)
+function [xyz_rec, lla_rec, R_enu] = getReceiverPosModel(modelName, obs_path)
 
 if nargin < 1
     modelName = "wgs84";
 end
 
-xyz_rec = [3675710.0, 1383730.0, 5022806.0];  % [m]
+xyz_rec = getRinexPosition(obs_path); % (ECEF)
 
 switch lower(string(modelName))
     case "wgs84"

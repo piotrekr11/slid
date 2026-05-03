@@ -13,7 +13,7 @@ function [GDOP_all, PDOP_all, HDOP_all, VDOP_all, TDOP_all, nSats_all] = ...
     
     for e = 1:numEpochs
         epochTime   = uniqueTimes(e);
-        pos_all_vis = []; % accumulate visible sat positions across all constellations
+        pos_all_vis = [];
     
         for s = 1:numSystems
             obsData = obsCell{s};
@@ -46,8 +46,8 @@ function [GDOP_all, PDOP_all, HDOP_all, VDOP_all, TDOP_all, nSats_all] = ...
     
             % Elevation filter
             elev = computeElevationAngles(pos_matched, xyz_rec, R_enu);
-    
             pos_all_vis = [pos_all_vis; pos_matched(elev >= elevMask, :)];
+            
         end
     
         nVisible      = size(pos_all_vis, 1);
