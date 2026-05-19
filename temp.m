@@ -1,5 +1,5 @@
 
-pos_xyz = getRinexPosition('CBKA0811/CBKA081I.26o')
+pos_xyz = getRinexPosition('CBKA0910/CBKA0910.26o')
 
 
 function pos_xyz = getRinexPosition(filename)

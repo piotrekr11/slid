@@ -7,13 +7,13 @@ clc; clear all; close all;
 elevMask = 10; %[deg]
 
 %% Read RINEX files
-obs_path = 'CBKA0811/CBKA081I.26o';
+obs_path = 'CBKA0910/CBKA0910.26o';
 
 obs = rinexread(obs_path);
-nav_gps = rinexread('CBKA0811/CBKA081I.26n');
-nav_glo = rinexread('CBKA0811/CBKA081I.26g');
-nav_gal = rinexread('CBKA0811/CBKA081I.26l');
-nav_bds = rinexread('CBKA0811/CBKA081I.26c');
+nav_gps = rinexread('CBKA0910/CBKA0910.26n');
+nav_glo = rinexread('CBKA0910/CBKA0910.26g');
+nav_gal = rinexread('CBKA0910/CBKA0910.26l');
+nav_bds = rinexread('CBKA0910/CBKA0910.26c');
 
 %% Receiver position and ENU rotation matrix
 [xyz_rec, lla_rec, R_enu] = getReceiverPos(obs_path);
@@ -51,21 +51,33 @@ ylabel('PDOP');
 title(sprintf('PDOP comparison (elevation mask: %d°)', elevMask));
 grid on;
 
-%% HDOP and VDOP
+%% HDOP comparison
 figure;
-subplot(2,1,1);
 plot(times, GPS_HDOP, 'b', times, GLO_HDOP, 'r', ...
      times, GAL_HDOP, 'g', times, BDS_HDOP, 'm', ...
      times, COM_HDOP, 'k', 'LineWidth', 1.5);
 legend('GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined');
-ylabel('HDOP'); title('Horizontal DOP'); grid on;
-
-subplot(2,1,2);
+ylabel('HDOP');
+title(sprintf('HDOP comparison (elevation mask: %d°)', elevMask));
+grid on;
+%% VDOP comparison
+figure;
 plot(times, GPS_VDOP, 'b', times, GLO_VDOP, 'r', ...
-     times, GAL_VDOP, 'g', times, BDS_VDOP, 'm', ...
-     times, COM_VDOP, 'k', 'LineWidth', 1.5);
+    times, GAL_VDOP, 'g', times, BDS_VDOP, 'm', ...
+    times, COM_VDOP, 'k', 'LineWidth', 1.5);
 legend('GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined');
-ylabel('VDOP'); xlabel('Time'); title('Vertical DOP'); grid on;
+ylabel('VDOP');
+title(sprintf('VDOP comparison (elevation mask: %d°)', elevMask));
+grid on;
+%% TDOP comparison
+figure;
+plot(times, GPS_TDOP, 'b', times, GLO_TDOP, 'r', ...
+    times, GAL_TDOP, 'g', times, BDS_TDOP, 'm', ...
+    times, COM_TDOP, 'k', 'LineWidth', 1.5);
+legend('GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined');
+ylabel('TDOP');
+title(sprintf('TDOP comparison (elevation mask: %d°)', elevMask));
+grid on;
 
 %% Visible satellites
 figure;

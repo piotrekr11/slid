@@ -4,7 +4,7 @@ if nargin < 1
     elevMask = 10; % [degrees]
 end
 if nargin < 2
-    datasetDir = 'CBKA0811';
+    datasetDir = 'CBKA0910';
 end
 
 obsFile = dir(fullfile(datasetDir, '*.26o'));
@@ -23,7 +23,7 @@ modelNames = ["wgs84", "spherical"];
 
 for m = 1:numel(modelNames)
     modelName = modelNames(m);
-    [xyz_rec, lla_rec, R_enu] = getReceiverPosModel(modelName);
+    [xyz_rec, lla_rec, R_enu] = getReceiverPosModel(modelName, fullfile(datasetDir, [baseName '.26o']));
 
     [times, GPS_GDOP, GPS_PDOP, GPS_HDOP, GPS_VDOP, GPS_TDOP, GPS_nSats] = ...
         computeDOP(obs.GPS, nav_gps.GPS, xyz_rec, lla_rec, R_enu, elevMask);
