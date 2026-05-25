@@ -52,6 +52,7 @@ for s = 1:numel(systems)
     end
     grid(ax1, 'on');
     ylabel(ax1, dopName);
+    ylim(ax1,[0,20]);
     legend(ax1, 'Location', 'best');
 
     ax2 = nexttile(t);

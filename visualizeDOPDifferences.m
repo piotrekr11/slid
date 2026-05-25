@@ -25,7 +25,7 @@ function visualizeDOPDifferences(inputMatFile, inputCsvFile, outputDir)
     results = loaded.results;
     metrics = readtable(inputCsvFile);
 
-    systems = {'GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined'};
+    systems = {'GPS', 'Galileo', 'BeiDou', 'Combined'};
     dopNames = {'GDOP', 'PDOP', 'HDOP', 'VDOP', 'TDOP'};
 
     times = results.wgs84.times;

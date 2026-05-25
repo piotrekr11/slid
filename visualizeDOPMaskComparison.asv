@@ -29,7 +29,7 @@ end
 [maskValues, sortIdx] = sort(maskValues);
 maskFields = maskFields(sortIdx);
 
-systems = {'GPS', 'Galileo', 'BeiDou', 'Combined'};
+systems = {'GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined'};
 dopNames = {'GDOP', 'PDOP', 'HDOP', 'VDOP', 'TDOP'};
 colors = lines(numel(maskFields));
 

@@ -46,7 +46,7 @@ figure;
 plot(times, GPS_PDOP, 'b', times, GLO_PDOP, 'r', ...
      times, GAL_PDOP, 'g', times, BDS_PDOP, 'm', ...
      times, COM_PDOP, 'k', 'LineWidth', 1.5);
-legend('GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined');
+legend('GPS','GLONASS', 'Galileo', 'BeiDou', 'Combined');
 ylabel('PDOP');
 title(sprintf('PDOP comparison (elevation mask: %d°)', elevMask));
 grid on;
@@ -56,7 +56,7 @@ figure;
 plot(times, GPS_HDOP, 'b', times, GLO_HDOP, 'r', ...
      times, GAL_HDOP, 'g', times, BDS_HDOP, 'm', ...
      times, COM_HDOP, 'k', 'LineWidth', 1.5);
-legend('GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined');
+legend('GPS','GLONASS', 'Galileo', 'BeiDou', 'Combined');
 ylabel('HDOP');
 title(sprintf('HDOP comparison (elevation mask: %d°)', elevMask));
 grid on;
@@ -65,7 +65,7 @@ figure;
 plot(times, GPS_VDOP, 'b', times, GLO_VDOP, 'r', ...
     times, GAL_VDOP, 'g', times, BDS_VDOP, 'm', ...
     times, COM_VDOP, 'k', 'LineWidth', 1.5);
-legend('GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined');
+legend('GPS','GLONASS', 'Galileo', 'BeiDou', 'Combined');
 ylabel('VDOP');
 title(sprintf('VDOP comparison (elevation mask: %d°)', elevMask));
 grid on;
@@ -74,7 +74,7 @@ figure;
 plot(times, GPS_TDOP, 'b', times, GLO_TDOP, 'r', ...
     times, GAL_TDOP, 'g', times, BDS_TDOP, 'm', ...
     times, COM_TDOP, 'k', 'LineWidth', 1.5);
-legend('GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined');
+legend('GPS','GLONASS', 'Galileo', 'BeiDou', 'Combined');
 ylabel('TDOP');
 title(sprintf('TDOP comparison (elevation mask: %d°)', elevMask));
 grid on;
@@ -84,7 +84,7 @@ figure;
 plot(times, GPS_nSats, 'b', times, GLO_nSats, 'r', ...
      times, GAL_nSats, 'g', times, BDS_nSats, 'm', ...
      times, COM_nSats, 'k', 'LineWidth', 1.5);
-legend('GPS', 'GLONASS', 'Galileo', 'BeiDou', 'Combined');
+legend('GPS','GLONASS', 'Galileo', 'BeiDou', 'Combined');
 ylabel('# Satellites'); xlabel('Time');
 title(sprintf('Visible satellites (elevation mask: %d°)', elevMask));
 grid on;
