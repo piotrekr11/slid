@@ -1,7 +1,7 @@
 function results = runDOPModelComparison(elevMask, datasetDir)
 
 if nargin < 1
-    elevMask = 10; % [degrees]
+    elevMask = 10; % in degrees
 end
 if nargin < 2
     datasetDir = 'CBKA0910';
